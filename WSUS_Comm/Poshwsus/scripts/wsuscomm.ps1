@@ -1,4 +1,4 @@
-﻿<# This form was created using POSHGUI.com  a free online gui designer for PowerShell
+﻿<# 
 .NAME
     WSUSCOM
 #>
@@ -123,11 +123,12 @@ $WSUSConnectButton.add_click({
     if ($(Get-Module).Name -like "*PoshWSUS*") {$StatusTextBox.Text = "PoshWSUS found and imported"
         $StatusTextBox.BackColor = '#3AD829'
         Write-Host -ForegroundColor Cyan Importing modules
-        Import-Module PoshWSUS
+        Import-Module PoshWSUS -Verbose
         
-        Start-Sleep 4
+        Write-Host $WSUSServer.Text
         #Connect to WSUS Server
-        Connect-PSWSUSServer -WsusServer $WSUSServer -Port 8530
+        Connect-PSWSUSServer -WsusServer $WSUSServer.text -Port 8530 -Verbose
+        $StatusTextBox.Text = "Successfully connected to WSUS Server"
     }else{
         $StatusTextBox.BackColor = '#FF002B'
         $StatusTextBox.Text = "Unabled to load POSHWSUS or connect to WSUS Server"
