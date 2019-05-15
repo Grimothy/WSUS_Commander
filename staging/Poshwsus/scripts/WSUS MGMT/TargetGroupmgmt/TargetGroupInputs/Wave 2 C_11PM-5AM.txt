@@ -1,0 +1,5 @@
+DB1.trumark.org
+DB5.trumark.org
+FILESVR1.trumark.org
+prod-filesvr-01.trumark.org
+prod-filesvr-03.trumark.org

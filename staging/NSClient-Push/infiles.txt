@@ -1,0 +1,12 @@
+prod-app-06.trumark.org
+prod-aviso.trumark.org
+prod-db-08.trumark.org
+prod-dmart-01.trumark.org
+prod-filesvr-01.trumark.org
+prod-filesvr-03.trumark.org
+prod-ic-01.trumark.org
+prod-int-01.trumark.org
+prod-mortsvc-02.trumark.org
+prod-sftp-01.trumark.org
+prod-source-01.trumark.org
+prod-witness-01.trumark.org

@@ -1,0 +1,4 @@
+DC1.trumark.org
+DC2.trumark.org
+DC4.trumark.org
+DC3.trumark.org
