@@ -175,7 +175,7 @@ Function Generate-NeededTGUpdates
     Import-Csv -Path $CSVPath"\"$Reportname-$date-"NeededUpdates-RAW".csv | where {$_.UpdateTitle -notlike "*Security Monthly Quality Rollup for Windows Server*"} | Export-Csv -Path $CSVPath"\"$Reportname-$date-"NeededUpdatesP1".csv -NoTypeInformation
     Remove-Item $CSVPath"\"$Reportname-$date-"NeededUpdates-RAW".csv -Force
     Start-Sleep 1
-    Write-Host -ForegroundColor Yellow Removing Security Monthly Quality Rollup for Windows Server
+    Write-Host -ForegroundColor Yellow Removing Security Monthly Quality Rollup for .Net Framework
     Write-Host -ForegroundColor Green Completed Reports are available at $CSVPath
     Import-Csv -Path $CSVPath"\"$Reportname-$date-"NeededUpdatesP1".csv | where {$_.UpdateTitle -notlike "*Security and Quality Rollup for .Net*"} | Export-Csv -Path $CSVPath"\"$Reportname-$date-"NeededUpdates".csv -NoTypeInformation
     Remove-Item -Path $CSVPath"\"$Reportname-$date-"NeededUpdatesP1".csv
