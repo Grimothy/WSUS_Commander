@@ -72,6 +72,7 @@ $WSUSSyncButton.width            = 90.39999389648437
 $WSUSSyncButton.height           = 30
 $WSUSSyncButton.location         = New-Object System.Drawing.Point(8,25)
 $WSUSSyncButton.Font             = 'Microsoft Sans Serif,10'
+$WSUSSyncButton.add_click({.\GUI\Wsus-Sync.ps1})
 
 $CreateUpdateGroupButton         = New-Object system.Windows.Forms.Button
 $CreateUpdateGroupButton.BackColor  = "#50e3c2"
