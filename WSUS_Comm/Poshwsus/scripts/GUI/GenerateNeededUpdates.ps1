@@ -156,8 +156,8 @@ Function Generate-NeededTGUpdates
     
     
     #Get-PSWSUSClientsInGroup -Name $TargetGroup| Get-PSWSUSUpdatePerClient | where -Property UpdateInstallationState -Like NotInstalled | Select Computername,UpdateKB,UpdateTitle
-    Get-PSWSUSClientsInGroup -Name $TargetGroup| Get-PSWSUSUpdatePerClient | where -Property UpdateInstallationState -Like NotInstalled | Select Computername,UpdateKB,UpdateTitle | Export-Csv $CSVPath"\"$Reportname-$date.csv
-    Get-PSWSUSClientsInGroup -Name $TargetGroup| Get-PSWSUSUpdatePerClient | where -Property UpdateInstallationState -Like NotInstalled | Select UpdateKB,UpdateTitle -Unique | Export-Csv $CSVPath"\"$Reportname-$date-"NeededUpdates-RAW".csv -NoTypeInformation
+    Get-PSWSUSClientsInGroup -Name $TargetGroup| Get-PSWSUSUpdatePerClient -UpdateScope (New-PSWSUSUpdateScope -ApprovedStates Any -IncludedInstallationStates NotInstalled,Downloaded)| Select Computername,UpdateKB,UpdateTitle |Export-Csv $CSVPath"\"$Reportname-$date.csv
+    Get-PSWSUSClientsInGroup -Name $TargetGroup| Get-PSWSUSUpdatePerClient -UpdateScope (New-PSWSUSUpdateScope -ApprovedStates Any -IncludedInstallationStates NotInstalled,Downloaded) | Select UpdateKB,UpdateTitle -Unique | Export-Csv $CSVPath"\"$Reportname-$date-"NeededUpdates-RAW".csv -NoTypeInformation
 
 
     #scrub file
